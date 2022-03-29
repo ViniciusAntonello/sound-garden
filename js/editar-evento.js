@@ -18,7 +18,7 @@ const loadEvent = async () => {
     inputPoster.value = event.poster
     inputAtracoes.value = event.attractions
     inputDescricao.value = event.description
-    inputData.value = date.toLocaleDateString('pt-BR') + ' ' + date.toLocaleTimeString('pt-BR')
+    inputData.value = date.toLocaleDateString('pt-BR') + ' ' + date.toLocaleTimeString('pt-BR')  //00/00/00 23:23
     inputLotacao.value = event.number_tickets
 }
 
