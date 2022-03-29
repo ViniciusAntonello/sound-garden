@@ -63,30 +63,30 @@
                     <form class="col-6" id="formulario" class="formulario">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" aria-describedby="nome">
+                            <input type="text" class="form-control" id="nome" aria-describedby="nome" title="Insira nome do evento">
                         </div>
                         <div>
                             <label for="poster" class="form-label">Poster</label>
-                            <input type="url" class="form-control" id="poster" aria-describedby="poster">
+                            <input type="url" class="form-control" id="poster" aria-describedby="poster" title="Insira link do poster">
                             <small>insira a url do seu poster</small>
                         </div>
                         <div class="mb-3">
                             <label for="atracoes" class="form-label">Atrações</label>
-                            <input type="text" class="form-control" id="atracoes" aria-describedby="atracoes">
+                            <input type="text" class="form-control" id="atracoes" aria-describedby="atracoes" title="Insira atrações do evento">
                             <small>insira o nome dos artistas separados por vírgula</small>
                         </div>
                         <div class="mb-3">
                             <label for="descricao" class="form-label">Descrição</label>
-                            <textarea name="descricao" id="descricao" class="form-control" rows="5"></textarea>
+                            <textarea name="descricao" id="descricao" class="form-control" rows="5" title="Insira descrição do evento"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="data" class="form-label">Data</label>
-                            <input type="datetime" name="data" id="data" class="form-control"
-                                placeholder="00/00/00 00:00">
+                            <input type="datetime-local" name="data" id="data" class="form-control"
+                                placeholder="00/00/00 00:00" title="Insira dia e hora do evento">
                         </div>
                         <div class="mb-3">
                             <label for="lotacao" class="form-label">Lotação (número de ingressos disponiveis)</label>
-                            <input type="number" class="form-control" id="lotacao" aria-describedby="lotacao">
+                            <input type="number" class="form-control" id="lotacao" aria-describedby="lotacao" title="Insira quantidade máxima de ingressos" min="1">
                         </div>
                         <button type="submit" class="btn btn-primary" onclick="formulario()">enviar</button>
                     </form>
