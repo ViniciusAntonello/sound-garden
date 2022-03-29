@@ -1,55 +1,39 @@
-const urlParams = new URLSearchParams(window.location.search)
-const myParam = urlParams.get('id')
-const inputNome = document.querySelector('#nome')
-const inputBanner = document.querySelector('#banner')
-const inputAtracoes = document.querySelector('#atracoes')
-const inputDescricao = document.querySelector('#descricao')
-const inputData = document.querySelector('#data')
-const inputLotacao = document.querySelector('#lotacao')
-const botaoDelete = document.querySelector('#botaoDelete')
-
-
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
+// https://xp41-soundgarden-api.herokuapp.com/events/:id
+
+const urlParams = new URLSearchParams(window.location.search)
+const paramId = urlParams.get('id')
+
+const inputName = document.querySelector('#nome')
+const inputBanner = document.querySelector('#banner')
+const inputAttractions = document.querySelector('#atracoes')
+const inputDescription = document.querySelector('#descricao')
+const inputDate = document.querySelector('#data')
+const inputCapacity = document.querySelector('#lotacao')
+const btnDelete = document.querySelector('#botaoDelete')
+
 window.onload = async () => {
-   const resposta = await fetch(`${BASE_URL}/events/${myParam}`, {
+    const answer = await fetch(`${BASE_URL}/events/${paramId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
     })
 
-    const respostaFormatada = await resposta.json()
+    const inputedAnswer = await answer.json()
 
-    console.log(respostaFormatada);
+    console.log(inputedAnswer);
 
-    inputNome.value = respostaFormatada.name
-    inputBanner.value = respostaFormatada.poster
-    inputAtracoes.value = respostaFormatada.attractions
-    inputDescricao.value = respostaFormatada.description
-    inputLotacao.value = respostaFormatada.number_tickets
+    inputName.value = inputedAnswer.name
+    inputBanner.value = inputedAnswer.psoter
+    inputAttractions.value = inputedAnswer.attractions
+    inputDescription.value = inputedAnswer.description
+    inputCapacity.value = inputedAnswer.number_tickets
 
-    newDate = `${respostaFormatada.scheduled[8]}${respostaFormatada.scheduled[9]}/${respostaFormatada.scheduled[5]}${respostaFormatada.scheduled[6]}/${respostaFormatada.scheduled[0]}${respostaFormatada.scheduled[1]}${respostaFormatada.scheduled[2]}${respostaFormatada.scheduled[3]} ${respostaFormatada.scheduled[11]}${respostaFormatada.scheduled[12]}:${respostaFormatada.scheduled[14]}${respostaFormatada.scheduled[15]} `
+    // newDate = `${inputedAnswer.scheduled[8]}${inputedAnswer.scheduled[9]}/${inputedAnswer.scheduled[5]}${inputedAnswer.scheduled[6]}/${inputedAnswer.scheduled[0]}${inputedAnswer.scheduled[1]}${inputedAnswer.scheduled[2]}${inputedAnswer.scheduled[3]} ${inputedAnswer.scheduled[11]}${inputedAnswer.scheduled[12]}:${inputedAnswer.scheduled[14]}${inputedAnswer.scheduled[15]} `
 
-    inputData.value = newDate
-
-    
-}
+    // inputDate.value = newDate
 
 
-
-botaoDelete.onclick = async evento => {
-    evento.preventDefault()
-    const respostaDelete = await fetch(`${BASE_URL}/events/${myParam}`, {
-        method: "DELETE",
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-
-    alert('Evento excluído com sucesso')
-
-    setTimeout(()=> {
-        window.location.href = 'admin.html'
-    }, 2000)
 }
