@@ -1,17 +1,49 @@
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
-// https://xp41-soundgarden-api.herokuapp.com/events/:id
-
-const urlParams = new URLSearchParams(window.location.search)
-const paramId = urlParams.get('id')
-
 const inputName = document.querySelector('#nome')
 const inputBanner = document.querySelector('#banner')
 const inputAttractions = document.querySelector('#atracoes')
 const inputDescription = document.querySelector('#descricao')
 const inputDate = document.querySelector('#data')
 const inputCapacity = document.querySelector('#lotacao')
-const btnDelete = document.querySelector('#botaoDelete')
+
+
+// METÓDO 1 - Tomei por base o código da Tiaki
+
+
+// const loadEvent = async () => {
+//     const params = new URLSearchParams(window.location.search);
+//     const id = params.get("id");
+
+//     const event = await getEventById(id);
+//     const date = new Date(event.scheduled);
+
+//     inputName.value = event.name
+//     inputBanner.value = event.psoter
+//     inputAttractions.value = event.attractions
+//     inputDescription.value = event.description
+//     inputDate.value = date.toLocaleDateString('pt-BR') + ' '+ date.toLocaleTimeString('pt-BR')
+//     inputCapacity.value = event.number_tickets
+
+// }
+
+// async function getEventById(id) {
+//     const receive = {
+//         method: "GET",
+//         dataType: "Json",
+//         headers: {
+//             "Content-Type": "application/json"
+//         }
+//     };
+// }
+
+// loadEvent();
+
+
+// MÉTODO 2 - Um Frankstain de códigos e vídeos =/
+
+const urlParams = new URLSearchParams(window.location.search)
+const paramId = urlParams.get('id')
 
 window.onload = async () => {
     const answer = await fetch(`${BASE_URL}/events/${paramId}`, {
