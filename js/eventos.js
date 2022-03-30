@@ -31,3 +31,8 @@ async function getAllEvents(){
             + "</article>"
     }
 }
+
+
+//CSS
+
+// document.getElementById('lista-eventos').style.display = 'flex', flex;;

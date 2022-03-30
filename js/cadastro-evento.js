@@ -46,6 +46,9 @@ async function formulario() {
     const responseContent = await response.json();
     console.log(responseContent);
 
+    if(confirm('Evento! Voltar para pagina de eventos?')){
+        window.location.href = "admin.html";
+    }
 }
 
 
