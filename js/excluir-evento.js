@@ -6,12 +6,12 @@ const id = params.get('id');
 const requestOption = {
     method: 'GET',
     redirect: 'follow'
-};  
+};
 
 const loadEvent = async () => {
     const request = await fetch(`${BASE_URL}/events/${id}`)
     const response = await request.json()
-    const { name, poster, attractions, description, scheduled, number_tickets } = response
+    const {name, poster, attractions, description, scheduled, number_tickets } = response
 
     console.log(response);
 
@@ -33,13 +33,17 @@ const loadEvent = async () => {
 }
 loadEvent();
 
+const formulario = document.querySelector('form.col-6')
 
-document.getElementsByTagName('form').onsubmit(function (e) {
+console.log(formulario);
+
+formulario.addEventListener("submit", function (e) {
     e.preventDefault();
     loadEvent();
 
-    alert('Evento excluido!')
-    // window.location.replace('./admin.html')
+    if(confirm('Evento Excluido! Voltar para pagina de eventos?')){
+        window.location.href = "admin.html";
+    }
 })
 
 async function deleteEvent() {
