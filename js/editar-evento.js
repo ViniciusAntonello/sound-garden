@@ -73,4 +73,3 @@ async function updateEvent(form){   //form do html
     console.log(response);
     return await response.json();
 }
-
