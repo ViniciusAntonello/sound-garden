@@ -1,5 +1,30 @@
 const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com/events';
 
+
+//inicio REMOVER OS 3 EVENTOS MODELOS DO HTML
+function removeModelEvents() {
+    // const card = document.getElementsByTagName('table')
+    // console.log(card);   //mostra os 3 eventos iniciais do html
+
+    // const lista = card.getElementById('tbody')
+    // console.log(lista);
+
+    const events = document.querySelectorAll('tr.eventos')
+    console.log(events);
+
+    for (let i = 0; i < events.length; i++) {
+        const event = events[i];
+        
+        console.log(event);
+        event.remove()
+    }
+}
+
+removeModelEvents()
+// fim REMOVER OS 3 EVENTOS MODELOS DO HTML
+
+
+//inicio PUXAR DADOS DO BANCO DA API
 const options = {
     method:"GET",
     dataType:"JSON",
@@ -37,7 +62,7 @@ async function getAllEvents(){
     }
 
 }
-
+//fim PUXAR DADOS DO BANCO DA API
 
 
 

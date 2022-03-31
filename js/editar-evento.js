@@ -57,6 +57,7 @@ async function updateEvent(form){   //form do html
         scheduled: (new Date(form.data.value)).toISOString(), //transforma na data ISO
         number_tickets: parseInt(form.lotacao.value) //transforma em numero
     }
+
     const update = {
         method:"PUT",
         body: JSON.stringify(event),
