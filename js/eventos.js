@@ -21,10 +21,11 @@ async function getAllEvents(){
     for (let index = 0; index < listaEventos.length; index++) {
         const evento = listaEventos[index];
 
+        // console.log(evento);
         const date = new Date(evento.scheduled);
 
         div.innerHTML += `<article class='evento card p-5 m-3' id='${evento._id}'>`
-            + `<h2>${evento.name} - ${date.toLocaleDateString('pt-BR')}</h2>`
+            + `<h2>${evento.name} - ${date.toLocaleDateString('pt-BR')} ${date.toLocaleTimeString('pt-BR')}</h2>`
             + `<h4>${evento.attractions}</h4>`
             + `<p>${evento.description}</p>`
             + `<a href="#" class="btn btn-primary">reservar ingresso</a>`
