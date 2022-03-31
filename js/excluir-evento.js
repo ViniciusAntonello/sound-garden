@@ -46,6 +46,18 @@ formulario.addEventListener("submit", function (e) {
     }
 })
 
+// Desativando áreas de input
+
+const disabledInputs = document.getElementsByTagName('input');
+for (let i = 0; i < disabledInputs.length; ++i){
+    disabledInputs[i].setAttribute('disabled', "");
+}
+
+const disabledTextarea = document.querySelector('textarea');
+disabledTextarea.setAttribute('disabled', "");
+
+// Fim da áreas de input
+
 async function deleteEvent() {
     const requestOptions = {
         method: 'DELETE',

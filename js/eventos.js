@@ -35,4 +35,10 @@ async function getAllEvents(){
 
 //CSS
 
+document.querySelector('#lista-eventos').style.cssText = `
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+`
+
 // document.getElementById('lista-eventos').style.display = 'flex', flex;;
