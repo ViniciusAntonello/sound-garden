@@ -1,0 +1,19 @@
+#modal-feedback {
+    width: 400px;
+    height: 200px;
+    background-color: #C2185B;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    text-align: center;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%);
+    transition: 200ms;
+    padding: 5px;
+}
+
+#feedback {
+    color:aliceblue;
+}
