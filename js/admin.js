@@ -15,7 +15,7 @@ function removeModelEvents() {
     for (let i = 0; i < events.length; i++) {
         const event = events[i];
         
-        console.log(event);
+        // console.log(event);
         event.remove()
     }
 }
@@ -47,7 +47,7 @@ async function getAllEvents(){
 
         const date = new Date(evento.scheduled);
 
-        console.log(div)
+        // console.log(div)
 
         div.innerHTML += `<th scope="row">${index}</th>`
         + `<td>${date.toLocaleDateString('opt-BR')} ${date.toLocaleTimeString('pt-BR')}</td>`
