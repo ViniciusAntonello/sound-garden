@@ -111,6 +111,33 @@
         </div>
     </footer>
 
+    <div id="modal" style="display: none">
+        <div>
+            <div class="titulo-btn">
+                <h3 id="tituloModal">Nome do evento</h3>
+                <div class="btn-x">X</div>
+            </div>
+            <form class="col-11">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" aria-describedby="nome" placeHolder="Seu nome">           
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="banner" placeholder="email@email.com">
+        </div>
+        <div class="mb-3">
+            <label for="lotacao" class="form-label">Ingresso</label>
+            <input type="number" class="form-control" id="lotacao" aria-describedby="lotacao" min="1">
+            <small id="qtdadedeIngressos">Ingressos disponíveis:</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Reservar!</button>
+        </form>
+    </div>
+    <div id="modal-feedback" style="display: none;">
+        <h6 id="feedback"></h6>
+    </div>
+
     <script src="./js/slider.js"></script>
     <script src="js/index.js"></script>
     <script src="js/modal.js"></script>
