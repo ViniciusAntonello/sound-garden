@@ -13,9 +13,39 @@
 </head>
 
 <body>
+    <header id="header-hidden">
+        <img src="img/Sound-logo (1).png" width="300" alt="">
+        
+        <div id="text-hidden">painel administrativo</div>
+        <span id="nav-hidden">
+            <ul class="nav nav-pills mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page" id="btn-menu-admin">
+                        Eventos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        Funcionários
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        Usuários
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="nav-link link-dark">
+                        Landing Page
+                    </a>
+                </li>
+            </ul>
+        </span>
+    </header>
     <div class="container-fluid">
         <div class="row">
-            <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light col-2">
+            <aside id="aside-hidden" class="flex-column flex-shrink-0 p-3 bg-light col-2">
 
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32">
@@ -29,7 +59,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="#" class="nav-link active" aria-current="page" id="btn-menu-admin">
                             Eventos
                         </a>
                     </li>
@@ -64,18 +94,18 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Data</th>
+                                <th scope="col" class="vanish">Data</th>
                                 <th scope="col">Titulo</th>
-                                <th scope="col">Atrações</th>
+                                <th scope="col" class="vanish">Atrações</th>
                                 <th scope="col">Ações</th>
                             </tr>
                         </thead>
                         <tbody id="lista-eventos">
                             <tr class="eventos">
                                 <th scope="row">1</th>
-                                <td>05/03/2022 20:00</td>
+                                <td class="vanish">05/03/2022 20:00</td>
                                 <td>Festival Coala</td>
-                                <td>Miley Cyrus, Liniker, Smashing Pumpkins</td>
+                                <td class="vanish">Miley Cyrus, Liniker, Smashing Pumpkins</td>
                                 <td>
                                     <a href="reservas.html" class="btn btn-dark">ver reservas</a>
                                     <a href="editar.html" class="btn btn-secondary">editar</a>
@@ -84,9 +114,9 @@
                             </tr>
                             <tr class="eventos">
                                 <th scope="row">2</th>
-                                <td>05/03/2022 20:00</td>
+                                <td class="vanish">05/03/2022 20:00</td>
                                 <td>Indie Fest</td>
-                                <td>Arctic Monkeys, The Kooks, Hiatus Kaiyote</td>
+                                <td class="vanish">Arctic Monkeys, The Kooks, Hiatus Kaiyote</td>
                                 <td>
                                     <a href="reservas.html" class="btn btn-dark">ver reservas</a>
                                     <a href="editar.html" class="btn btn-secondary">editar</a>
@@ -95,9 +125,9 @@
                             </tr>
                             <tr class="eventos">
                                 <th scope="row">3</th>
-                                <td>05/03/2022 20:00</td>
+                                <td class="vanish">05/03/2022 20:00</td>
                                 <td>Bourbon Jazz Festival</td>
-                                <td>Esperanza Spalding, Zimbo Trio, Serial Funkers</td>
+                                <td class="vanish">Esperanza Spalding, Zimbo Trio, Serial Funkers</td>
                                 <td>
                                     <a href="reservas.html" class="btn btn-dark">ver reservas</a>
                                     <a href="editar.html" class="btn btn-secondary">editar</a>

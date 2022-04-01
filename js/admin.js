@@ -50,9 +50,9 @@ async function getAllEvents(){
         // console.log(div)
 
         div.innerHTML += `<th scope="row">${index}</th>`
-        + `<td>${date.toLocaleDateString('opt-BR')} ${date.toLocaleTimeString('pt-BR')}</td>`
+        + `<td class="vanish">${date.toLocaleDateString('opt-BR')} ${date.toLocaleTimeString('pt-BR')}</td>`
         + `<td>${evento.name}</td>`
-        + `<td>${evento.attractions}</td>`
+        + `<td class="vanish">${evento.attractions}</td>`
         + `<td>${evento.name}</td>`
         + `<td>
             <a href="reservas.html" class="btn btn-dark">ver reservas</a>

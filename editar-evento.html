@@ -13,9 +13,41 @@
 </head>
 
 <body>
+    <header id="header-hidden">
+        <img src="img/Sound-logo (1).png" width="300" alt="">
+        
+        <a href="admin.html">
+            <p style="text-decoration:none; color:black" class="text-center">painel administrativo</p>
+        </a>
+        <span id="nav-hidden">
+            <ul class="nav nav-pills mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page" id="btn-menu-admin">
+                        Eventos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        Funcionários
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-dark">
+                        Usuários
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="nav-link link-dark">
+                        Landing Page
+                    </a>
+                </li>
+            </ul>
+        </span>
+    </header>
     <div class="container-fluid">
         <div class="row">
-            <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light col-2">
+            <aside id="aside-hidden" class="flex-column flex-shrink-0 p-3 bg-light col-2">
 
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32">
@@ -59,7 +91,7 @@
                 <div class="my-5">
                     <h1>Editar evento</h1>
                 </div>
-                <div>
+                <div id="form-container">
                     <!-- - cadastro de evento (nome, atrações, descrição, horário, data, numero de ingressos) -->
                     <form class="col-6">
                         <div class="mb-3">

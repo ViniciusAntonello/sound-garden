@@ -93,6 +93,23 @@ footer nav ul li  {
     max-width: 600px;
 }
 
+#aside-hidden {
+    display: flex;
+}
+
+#header-hidden {
+    display: none;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+#nav-hidden {
+    display: flex;
+    flex-direction: row;
+}
+
 @media only screen and (max-width: 768px) {
     #footer-img-container {
         display: none;
@@ -100,6 +117,38 @@ footer nav ul li  {
 
     #menu-footer {
         display: block;
+    }
+
+    .vanish {
+        display: none;
+    }
+
+    #btn-menu-admin {
+        min-width: 130px;
+    }
+
+    .my-5 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    #header-hidden {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #aside-hidden {
+        display: none;
+    }
+
+    #form-container {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
     }
   }
 
@@ -112,4 +161,10 @@ footer nav ul li  {
 
 #title-index {
     text-align: center;
+}
+
+/* admin */
+
+.btn.btn-dark, .btn.btn-secondary, .btn.btn-danger {
+    width: 100%;
 }

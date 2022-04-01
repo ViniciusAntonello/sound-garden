@@ -1,7 +1,7 @@
 
 // Slider simplificado
 
-let timer = 3500;
+let timer = 3000;
 let imageIndex = 0;
 let imgs = document.querySelectorAll('#slider img');    
 let numbImgs =  imgs.length;
