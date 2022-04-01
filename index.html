@@ -55,12 +55,37 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                    <button type="submit" id="btn-reserva">
+                        <a href="#" class="btn btn-primary">reservar ingresso</a>
+                    </button>
+                    
                 </article>                          
             </div>
             <div class="container text-center">
                 <a href="eventos.html" class="btn btn-secondary">ver todos os eventos</a>
             </div>
+
+<!--ADICIONAR MODAL-->
+            <div class="modal-container" id="modal-container">
+                <form class="ticket-form col-6">
+                    <div>
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" aria-describedby="nome">
+                    </div>
+                    <div>
+                        <label for="nome" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="email" aria-describedby="e-mail">
+                    </div>
+                    <div>
+                        <label for="nome" class="form-label">Quantidade de Ingresso</label>
+                        <input type="text" class="form-control" id="quantidadeingresso" aria-describedby="ingresso">
+                    </div>
+                    <button type="submit" onclick="reservarTicket(this.form)" id="btn-sucess" class="btn btn-primary">enviar</button>
+                    <button type="cancel" class="btn btn-danger">Cancelar</button>
+                </form>  
+            </div>
+<!--FIM MODAL-->
+
         </section>
         <section class="full d-flex justify-content-center align-items-center"
             style="background-color: #f2f2f2; color: #555">
@@ -110,33 +135,6 @@
             </nav>
         </div>
     </footer>
-
-    <div id="modal" style="display: none">
-        <div>
-            <div class="titulo-btn">
-                <h3 id="tituloModal">Nome do evento</h3>
-                <div class="btn-x">X</div>
-            </div>
-            <form class="col-11">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" aria-describedby="nome" placeHolder="Seu nome">           
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" aria-describedby="banner" placeholder="email@email.com">
-        </div>
-        <div class="mb-3">
-            <label for="lotacao" class="form-label">Ingresso</label>
-            <input type="number" class="form-control" id="lotacao" aria-describedby="lotacao" min="1">
-            <small id="qtdadedeIngressos">Ingressos disponíveis:</small>
-        </div>
-        <button type="submit" class="btn btn-primary">Reservar!</button>
-        </form>
-    </div>
-    <div id="modal-feedback" style="display: none;">
-        <h6 id="feedback"></h6>
-    </div>
 
     <script src="./js/slider.js"></script>
     <script src="js/index.js"></script>

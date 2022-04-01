@@ -1,4 +1,4 @@
-const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com/events';
+const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com';
 
 //inicio REMOVER OS 3 ARTICLES MODELOS DO HTML
 function removeModelCards() {
@@ -28,7 +28,7 @@ getThreeEvents();
 
 async function getThreeEvents(){
     //            assincrona
-    const response = await fetch(BASE_URL, options)
+    const response = await fetch(`${BASE_URL}/events`, options)
     const listaEventos = await response.json();
     // console.log(listaEventos) //mostra o array de eventos
 

@@ -26,9 +26,77 @@
             </div>
 
             <div id="lista-eventos">
+                <article class="evento card p-5 m-3">
+                    <h2>nome do evento - 05/03/2022</h2>
+                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
+                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
+                        nobis in inventore tenetur asperiores.</p>
+                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                </article>
+                <article class="evento card p-5 m-3">
+                    <h2>nome do evento - 05/03/2022</h2>
+                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
+                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
+                        nobis in inventore tenetur asperiores.</p>
+                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                </article>
+                <article class="evento card p-5 m-3">
+                    <h2>nome do evento - 05/03/2022</h2>
+                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
+                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
+                        nobis in inventore tenetur asperiores.</p>
+                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                </article>
+                <article class="evento card p-5 m-3">
+                    <h2>nome do evento - 05/03/2022</h2>
+                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
+                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
+                        nobis in inventore tenetur asperiores.</p>
+                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                </article>
+                <article class="evento card p-5 m-3">
+                    <h2>nome do evento - 05/03/2022</h2>
+                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
+                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
+                        nobis in inventore tenetur asperiores.</p>
+                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                </article>
+                <article class="evento card p-5 m-3">
+                    <h2>nome do evento - 05/03/2022</h2>
+                    <h4>Arctic Monkeys, The Kooks, Hiatus Kaiyote</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
+                        dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
+                        nobis in inventore tenetur asperiores.</p>
+                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                </article>
             </div>
             
         </section>
+<!--ADICIONAR MODAL-->
+        <div class="modal-container" id="modal-container">
+            <form class="ticket-form col-6">
+                <div>
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" aria-describedby="nome">
+                </div>
+                <div>
+                    <label for="nome" class="form-label">E-mail</label>
+                    <input type="text" class="form-control" id="email" aria-describedby="e-mail">
+                </div>
+                <div>
+                    <label for="nome" class="form-label">Quantidade de Ingresso</label>
+                    <input type="text" class="form-control" id="quantidadeingresso" aria-describedby="ingresso">
+                </div>
+                <button type="submit" onclick="reservarTicket(this.form)" id="btn-sucess" class="btn btn-primary">enviar</button>
+                <button type="cancel" class="btn btn-danger">Cancelar</button>
+            </form>  
+        </div>
+<!--FIM MODAL-->
         <section class="full d-flex justify-content-center align-items-center"
             style="background-color: #f2f2f2; color: #555">
             <div class="container">
@@ -59,8 +127,6 @@
             </div>
         </section>
 
-    </main>
-    <footer>
         <div class="container d-flex justify-content-center align-items-center">
             <a href="#">
                 <img src="img/Sound-logo-black (1).png" width="200px" alt="">
@@ -78,7 +144,6 @@
         </div>
     </footer>
     <script src="js/eventos.js"></script>
-    <script src="./js/reserva.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="js/modal.js"></script>    
 </body>
 </html>

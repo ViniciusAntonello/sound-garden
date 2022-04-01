@@ -1,4 +1,4 @@
-const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com/events';
+const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com';
 
 const tituloEvento = document.querySelector('titulo');
 const dadosTabela = document.querySelector('tbody');
@@ -15,7 +15,7 @@ async function listaEvento () {
         },
         redirect: 'follow'
     }
-    const resposta = await fetch(`${BASE_URL}bookings/event/${parametros}`, configuracao);
+    const resposta = await fetch(`${BASE_URL}/bookings/event/${params}`, configuracao);
     console.log(resposta);
     const conteudoResposta = await resposta.json()
     console.log(conteudoResposta);
