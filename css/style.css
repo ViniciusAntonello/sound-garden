@@ -163,6 +163,10 @@ footer nav ul li  {
     text-align: center;
 }
 
+#btn-index {
+    max-width: 230px;
+}
+
 /* admin */
 
 .btn.btn-dark, .btn.btn-secondary, .btn.btn-danger {
