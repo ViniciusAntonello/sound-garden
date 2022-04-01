@@ -15,14 +15,26 @@ const ingressosCliente = document.querySelector('#lotacao');
 
 const formataData = (data) => {
     let d = data.split('');
-    let dd = d.slice(7,9).join('') + '/' + d.slice(5,7).join('') + '/' + d.slice(0,4).join('');
+    let dd = d.slice(8,10).join('') + '/' + d.slice(5,7).join('') + '/' + d.slice(0,4).join('');
     return dd
 };
 
+const fecharModal = () => {
+    if (condition) {
+        modal.setAttribute('style', 'display: none')
+        desfoque.setAttribute('style', 'filter:blur(0px)')
+        condition = false
+    }
+    nomeCliente.value='';
+    emailCliente.value='';
+    ingressosCliente.value='';
+}
+
 async function listar3() {
-    const configuracao = {
-        method: 'GET',
-        redirect: 'follow'
+    try {
+        const configuracao = {
+            method: 'GET',
+            redirect: 'follow'
     }
     const resposta = await fetch(`${BASE_URL}/events`, configuracao);
     
@@ -39,11 +51,16 @@ async function listar3() {
             </article>`
     
     })
+    } catch(error){
+        console.log(error);
+    }
+
 }
-listar3()
+listar3();
 
 let condition = false;
 const exibirModal = async (e) => {
+    try{
     const id = e.getAttribute('eventID');
     console.log(id);
     modal.setAttribute('style', 'display:block');
@@ -69,29 +86,26 @@ const exibirModal = async (e) => {
     tituloModal.innerHTML = conteudoResposta.name;
     tituloModal.setAttribute('eventoID', id);
     qtdadeIngressos.innerHTML = `Ingressos disponíveis: ${conteudoResposta.number_tickets}`;
-
-}
-
-desfoque.onclick = () => {
-    if (condition) {
-    modal.setAttribute('style', 'display:none')
-    desfoque.setAttribute('style', 'filter:blur(0px)')
-    condiditon = false
+    ingressosCliente.setAttribute('max',conteudoResposta.number_tickets)
+    } catch(error){
+        console.log(error);
     }
 
-    nomeCliente.value='';
-    emailCliente.value='';
-    ingressosCliente.value='';
 }
+
+desfoque.addEventListener('click', fecharModal) 
+btnX.addEventListener('click', fecharModal)
+    
 
 formulario.onsubmit = async (event) => {
     event.preventDefault();
-    const id = tituloModal.getAttribute('eventID');
-    const novaReserva = {
-        owner_name: nomeCliente.value,
-        owner_email: emailCliente.value,
-        number_tickets: ingressosCliente.value,
-        event_id: id
+    try{ 
+        const id = tituloModal.getAttribute('eventID');
+        const novaReserva = {
+            owner_name: nomeCliente.value,
+            owner_email: emailCliente.value,
+            number_tickets: ingressosCliente.value,
+            event_id: id
     }
     const configuracao = {
         method: 'POST',
@@ -104,4 +118,23 @@ formulario.onsubmit = async (event) => {
     }
     const resposta = await fetch(`${BASE_URL}/bookings`, configuracao);
     console.log(resposta);
+    if(resposta.status ==201){
+        feedbackModal.setAttribute('style', 'display:flex');
+        feedbackH3.innerHTML = 'Reserva realizada com sucesso!';
+        nomeCliente.value = '';
+        emailCliente.value = '';
+        ingressosCliente.value = '';
+        setTimeout(() =>{
+            feedbackModal.setAttribute('style', 'display:none');
+            fecharModal()
+        }, 3000)
+    }
+    if (resposta.status != 201) {
+        feedbackModal.setAttribute('style', 'display:flex');
+        feedbackH3.innerHTML = 'Ops... algo deu errado! favor preencher todos os campos corretamente.'
+        setTimeout(() =>feedbackModal.setAttribute('style', 'display:none'), 3000)
+        }
+    } catch(error){
+        console.log(erro);
+    }
 }

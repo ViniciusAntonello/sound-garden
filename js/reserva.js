@@ -3,8 +3,8 @@ const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com/events';
 const tituloEvento = document.querySelector('titulo');
 const dadosTabela = document.querySelector('tbody');
 
-async function listaEvento () {
-    const params = new URLSearchParams(window.location.search).get('id');  //busca por parametro (id)
+async function listarEventos () {
+    const parametros = new URLSearchParams(window.location.search).get('id');  //busca por parametro (id)
     const nomeDoEvento = new URLSearchParams(window.location.search).get('eventName');
     tituloEvento.innerHTML = nomeDoEvento
 
