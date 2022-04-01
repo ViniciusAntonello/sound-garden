@@ -4,11 +4,6 @@ const getEventId = () => {
     return params.get("id");
 }
 
-document.querySelector("form.ticket-form")
-    .addEventListener("submit", (e)=>{
-        e.preventDefault();
-    });
-
 async function reservarTicket(form){   //form do html
     const cliente = {
         owner_name: form.nome.value,
@@ -29,4 +24,18 @@ async function reservarTicket(form){   //form do html
     const response = await fetch(`${BASE_URL}/bookings`, create);
     console.log(response);
     return await response.json();
+
 }
+
+document.querySelector("form.ticket-form")
+    .addEventListener("click", (e)=>{
+        e.preventDefault();
+
+    if (e.target === document.getElementById('btn-sucess')) {
+        alert('Reserva cadastrada! Voltar para pagina de eventos')
+            window.location.href = "eventos.html";
+    } else if (e.target === document.getElementById('btn-danger')) {
+        alert('Nenhuma reserva cadastrada! Voltar para pagina de eventos')
+            window.location.href = "eventos.html";
+    }
+})

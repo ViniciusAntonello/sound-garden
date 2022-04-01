@@ -1,4 +1,4 @@
-const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com/events';
+const BASE_URL = 'https://xp41-soundgarden-api.herokuapp.com';
 
 const inputNome = document.getElementById('nome');
 const inputPoster = document.getElementById('banner');
@@ -31,7 +31,7 @@ async function getEventById(id){
         }
     };
     //            assincrona
-    const response = await fetch(`${BASE_URL}/${id}`, recebe)          //path param 
+    const response = await fetch(`${BASE_URL}/events/${id}`, recebe)          //path param 
     return await response.json();
     // console.log(eventoId) //mostra o array de eventos
 }
@@ -69,7 +69,7 @@ async function updateEvent(form){   //form do html
     const params = new URLSearchParams(window.location.search);  //busca por parametro (id)
     const id = params.get("id");
     
-    const response = await fetch(`${BASE_URL}/${id}`, update);
+    const response = await fetch(`${BASE_URL}/events/${id}`, update);
     console.log(response);
     return await response.json();
 }
