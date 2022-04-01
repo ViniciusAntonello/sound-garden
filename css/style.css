@@ -62,6 +62,8 @@ footer nav ul li  {
     height: 30vw;
     max-height: 1000px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 #slider img {
@@ -71,8 +73,43 @@ footer nav ul li  {
     height: 100%;
     object-fit: cover;
     transition: opacity 1000ms;
+    max-width: 1440px;
 }
 
 #slider img.selected {
     opacity: 1;
+}
+
+                                            /* Responsive */
+
+/* Footer */
+
+#footer-img-container{
+    width: 50%;
+}
+
+#footer-img-container img {
+    width: 40vw;
+    max-width: 600px;
+}
+
+@media only screen and (max-width: 768px) {
+    #footer-img-container {
+        display: none;
+    }
+
+    #menu-footer {
+        display: block;
+    }
+  }
+
+
+/* Index - main */
+
+#lista-eventos {
+    flex-wrap: wrap;
+}
+
+#title-index {
+    text-align: center;
 }
